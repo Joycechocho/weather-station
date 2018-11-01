@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.149.0.min.js"></script>
+  <script src="js/index.js" type="text/javascript"></script>
+  <style>
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .carousel-inner canvas {
+      width: 100%; /* Set width to 100% */
+      min-height: 200px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body background="images/background.jpg">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Weather App</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="#" onclick="queue()">Show Data</a></li>
+            <li><a href="#" onclick="convert('C')">Display Celsius</a></li>
+            <li><a href="#" onclick="convert('F')">Display Fahrenheit</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <canvas id="tempChart"></canvas>
+                        <canvas id="humidChart"></canvas>
+                        <h4> Timestamp: </h4>
+                        <h4 id="timestamp"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="well">
+                <h2>Boulder, CO</h2>
+                <h4 id="date_time"></h4>
+                <script type="text/javascript">date_time('date_time');</script>
+            </div>
+            <div class="well">
+                <h4> Current Temperature: </h4>
+                <h2 id="current_temp" size="60">N/A</h2>
+            </div>
+            <div class="well">
+                <h4>Current Humidity: </h4>
+                <h2 id="current_humid" size="60">N/A</h2>
+            </div>
+        </div>
+    </div>
+<hr>
+</div>
+
+
+<div class="container text-center">
+    <h3>Temperature / Humidity </h3>
+    <br>
+    <div class="row">
+        <div class="col-sm-2">
+            <font id="Avg_Temp" size="50">N/A</font>
+            <img src="images/avg_temp.png" width="50" height="50">
+            <!--<button type="button" class="btn btn-primary" onclick="Avg_Temp()">Request</button>-->
+            <p>Average Temperature</p>
+        </div>
+        <div class="col-sm-2">
+            <font id="High_Temp" size="50">N/A</font>
+            <img src="images/high_temp.png" width="50" height="50">
+            <!--<button type="button" class="btn btn-primary" onclick="High_Temp()">Request</button>-->
+            <p>Highest Temperature</p>
+        </div>
+        <div class="col-sm-2">
+            <font id="Low_Temp" size="50">N/A</font>
+            <img src="images/low_temp.png" width="50" height="50">
+            <!--<button type="button" class="btn btn-primary" onclick="Low_Temp()">Request</button>-->
+            <p>Lowest Temperature</p>
+        </div>
+        <div class="col-sm-2">
+            <font id="Avg_Humid" size="50">N/A</font>
+            <img src="images/avg_hum.png" width="50" height="50">
+            <!--<button type="button" class="btn btn-primary" onclick="Avg_Humid()">Request</button>-->
+            <p>Average Humidity</p>
+        </div>
+        <div class="col-sm-2">
+            <font id="High_Humid" size="50">N/A</font>
+            <img src="images/high_hum.png" width="50" height="50">
+            <!--<button type="button" class="btn btn-primary" onclick="High_Humid()">Request</button>-->
+            <p>Highest Humidity</p>
+        </div>
+        <div class="col-sm-2">
+            <font id="Low_Humid" size="50">N/A</font>
+            <img src="images/low_hum.png" width="50" height="50">
+            <!--<button type="button" class="btn btn-primary" onclick="Low_Humid()">Request</button>-->
+            <p>Lowest Humidity</p>
+        </div>
+    </div>
+</div><br>
+
+</body>
+</html>

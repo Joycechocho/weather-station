@@ -1,0 +1,4 @@
+.gitigore
+/test_AMQP
+/client/__pycache__
+/python_program_server/__pycache__
