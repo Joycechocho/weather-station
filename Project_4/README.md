@@ -20,7 +20,7 @@ With the goal in mind to get ourselves familiarized with communication on differ
 - AMQP
 
 Below is the system diagram:
-![Image 3](https://github.com/Embedded-Phelps/ECEN5053_002/blob/master/Projects/Project_4/pictures/system_diagram.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/system_diagram.png)
 
 # Project Features
 #### 1. MQTT/AWS Lambda function Implementation - Server
@@ -32,15 +32,15 @@ Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed m
 #### 6. A Server-Client AMQP Implementation
 #### 7. A Continuous Graph of Temperature/Humidity data with multiple lines
 An open souce HTML5 chart project is implemented to display the graph of the temperature/humidity data since the websocket connection to the server is opened.
-![Image 3](https://github.com/Embedded-Phelps/ECEN5053_002/blob/master/Projects/Project_4/pictures/line%20chart.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/line%20chart.png)
 #### 8. A Bar Chart support multiple data input
-![Image 3](https://github.com/Embedded-Phelps/ECEN5053_002/blob/master/Projects/Project_4/pictures/bar%20chart.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/bar%20chart.png)
 #### 9. Beautiful and Intuitive User Interface 
 Bootstrap is used in our porject because it includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It is a front-end web framework that was originally created by developers at Twitter to provide consistency across their internal tools. Today, it’s available to everyone through GitHub as a free and open-source collection of tools containing HTML- and CSS-based design templates and JavaScript (JS) extensions.
 #### 10. Flask framework Implementation (***)
 Flask is a micro web framework written in Python and based on the Werkzeug toolkit and Jinja2 template engine. It is implemented in this project in order to call python backend from Javascript frontend. 
 #### 11. Logging Interface Easy for Debugging (***)
-![Image 3](https://github.com/Embedded-Phelps/ECEN5053_002/blob/master/Projects/Project_4/pictures/log.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/log.png)
 
 In the Server side UI, HTML5 is integrated in the module stylesheet to facilitate the development and enhance the beauty of its presentation.
 
@@ -81,7 +81,7 @@ The execution of the server program requires some additional authentification fi
 $ cd python_program_server/
 $ ./start.sh
 ```
-![Image 3](https://github.com/Embedded-Phelps/ECEN5053_002/blob/master/Projects/Project_2/pictures/server_interface.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/server_interface.png)
 ### Client Side
 ##### After setting up the hardware, go to [python_program_client/] and execute the client program,
 ```sh
@@ -89,8 +89,8 @@ $ cd python_program_client/
 $ python web.py
 ```
 ##### The data for temperature/humidity and result for protocols would be shown on the main page. 
-![Image 3](https://github.com/Embedded-Phelps/ECEN5053_002/blob/master/Projects/Project_4/pictures/data%20display.png)
-![Image 3](https://github.com/Embedded-Phelps/ECEN5053_002/blob/master/Projects/Project_4/pictures/protocol%20test.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/data%20display.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/protocol%20test.png)
 
 Reference Sources
 * [Chart js: Open source HTML5 Charts for your website][rs1]
