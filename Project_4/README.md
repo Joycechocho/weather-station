@@ -90,7 +90,7 @@ The execution of the server program requires some additional authentication file
 $ cd python_program_server/
 $ ./start.sh
 ```
-![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/server_interface.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_2/pictures/server_interface.png)
 ### Client Side
 ##### After setting up the hardware, go to [python_program_client/] and execute the client program,
 ```sh
