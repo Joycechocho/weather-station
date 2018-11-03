@@ -1,4 +1,4 @@
-# EN5053-002 PROJECT_4 README
+# EN5053-002 Embedded Interface Design
 Developed by: ShuTing Guo, Joyce Cho
 
 date: 12/10/2017
@@ -12,7 +12,7 @@ date: 12/10/2017
 - Reference Sources
 
 # Project Description
-With the goal in mind to get ourselves familiarized with communication on different protocols, building interface using HTML/Javascript and continue to develop the QT interface, we have developed a demo that consists of two python programs, a server and a client. The server periodically interacts with the DHT22 sensors and handles temperature/humidity data acquisition as well as storage. It has a QT interface that display temperature/humidity data. When starting the connection with AWS, the server send the temperature and humidity readings to AWS IoT via MQTT every 5 seconds. In AWS, a Lambda function is created to receive the incoming temperature and humidity message and perform data processing before putting the data on a FIFO queue using the Simple Queue Service (SQS) eventually. On the other hand, the client retrieves messages from the SQS Queue and is a webpage that allow users to access the temperature/humidity data remotely. After getting messages from Amazon Web Serives, client would set up four protocols and communicate with sever back and forth. Therefore, we provide a web interface to present the analysis between below 4 protocols:
+With the goal in mind to get ourselves familiarized with communication on different protocols and continue to develop the QT interface, we have developed a demo that consists of two python programs, a server and a client. The server periodically interacts with the DHT22 sensors and handles temperature/humidity data acquisition as well as storage. It has a QT interface that display temperature/humidity data. When starting the connection with AWS, the server send the temperature and humidity readings to AWS IoT via MQTT every 5 seconds. In AWS, a Lambda function is created to receive the incoming temperature and humidity message and perform data processing before putting the data on a FIFO queue using the Simple Queue Service (SQS) eventually. On the other hand, the client retrieves messages from the SQS Queue and running a webpage that allows users to access the temperature/humidity data remotely. Moreover, after getting messages from Amazon Web Services, client would set up four protocols and communicate with sever back and forth. We provide a web interface to present the analysis between below 4 message protocols:
 
 - MQTT
 - COAP
@@ -26,28 +26,37 @@ Below is the system diagram:
 #### 1. MQTT/AWS Lambda function Implementation - Server
 #### 2. AWS SDK for Javascript on SQS Queue - Client
 Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. Before retrieving the messages in the queue, few more steps are implemented such as "Configure the SDK for JavaScript" and "Getting the URL for a Queue" in Javascript. AWS also provdes SDK for Javacript that can deal with the receive_message. We are using sqs.deleteMessages API to delete the messages that have been read to prevent the redundant message reading. 
+
 #### 3. A Server-Client Websocket Implementation
 #### 4. A Server-Client MQTT Implementation
 #### 5. A Server-Client CAOP Implementation
 #### 6. A Server-Client AMQP Implementation
 #### 7. A Continuous Graph of Temperature/Humidity data with multiple lines
-An open souce HTML5 chart project is implemented to display the graph of the temperature/humidity data since the websocket connection to the server is opened.
+An open souce chart project is implemented to display the graph of the temperature/humidity data after the websocket connection is initiallized.
+
 ![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/line%20chart.png)
+
 #### 8. A Bar Chart support multiple data input
+
 ![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/bar%20chart.png)
-#### 9. Beautiful and Intuitive User Interface 
-Bootstrap is used in our porject because it includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It is a front-end web framework that was originally created by developers at Twitter to provide consistency across their internal tools. Today, it’s available to everyone through GitHub as a free and open-source collection of tools containing HTML- and CSS-based design templates and JavaScript (JS) extensions.
-#### 10. Flask framework Implementation (***)
+
+#### 9. Flask framework Implementation (***)
 Flask is a micro web framework written in Python and based on the Werkzeug toolkit and Jinja2 template engine. It is implemented in this project in order to call python backend from Javascript frontend. 
+
+#### 10. Beautiful and Intuitive User Interface 
+Bootstrap is used in this project. It includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It is a front-end web framework that was originally created by developers at Twitter to provide consistency across their internal tools. Today, it’s available to everyone through GitHub as a free and open-source collection of tools containing HTML and CSS-based design templates and JavaScript (JS) extensions.
+
+
 #### 11. Logging Interface Easy for Debugging (***)
+
 ![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/log.png)
 
-In the Server side UI, HTML5 is integrated in the module stylesheet to facilitate the development and enhance the beauty of its presentation.
+In the server side UI, HTML5 is integrated in the module stylesheet to facilitate the development and enhance the beauty of its presentation.
 
 # Setup
 Hardware:
 * The setup tutorial of the Raspberry Pi can be found [here][s2]
-* The wiring of the DHT22 sensor to Raspberry Pi can be found [here][s1]
+* The wiring of DHT22 sensor to Raspberry Pi can be found [here][s1]
 
 The server-side software requires the installation of the packages listed below:
 
@@ -76,7 +85,7 @@ sudo /etc/init.d/mosquitto stop
 
 # User Guide
 ### Server Side
-The execution of the server program requires some additional authentification files for AWS connection and interaction, and multiple long command lines are needed to run the program. Thus a script is developed to smooth the process:
+The execution of the server program requires some additional authentication files for AWS connection and interaction. Multiple command lines are needed to run the program. Thus a script is developed to smooth the process:
 ```sh
 $ cd python_program_server/
 $ ./start.sh
