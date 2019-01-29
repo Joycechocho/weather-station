@@ -20,7 +20,7 @@ With the goal in mind to get ourselves familiarized with communication on differ
 - AMQP
 
 Below is the system diagram:
-![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/system_diagram.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/pictures/system_diagram.png)
 
 # Project Features
 #### 1. MQTT/AWS Lambda function Implementation - Server
@@ -34,11 +34,11 @@ Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed m
 #### 7. A Continuous Graph of Temperature/Humidity data with multiple lines
 An open souce chart project is implemented to display the graph of the temperature/humidity data after the websocket connection is initiallized.
 
-![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/line%20chart.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/pictures/line%20chart.png)
 
 #### 8. A Bar Chart support multiple data input
 
-![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/bar%20chart.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/pictures/bar%20chart.png)
 
 #### 9. Flask framework Implementation (***)
 Flask is a micro web framework written in Python and based on the Werkzeug toolkit and Jinja2 template engine. It is implemented in this project in order to call python backend from Javascript frontend. 
@@ -49,7 +49,7 @@ Bootstrap is used in this project. It includes a powerful mobile-first flexbox g
 
 #### 11. Logging Interface Easy for Debugging (***)
 
-![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/log.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/pictures/log.png)
 
 In the server side UI, HTML5 is integrated in the module stylesheet to facilitate the development and enhance the beauty of its presentation.
 
@@ -98,8 +98,8 @@ $ cd python_program_client/
 $ python web.py
 ```
 ##### The data for temperature/humidity and result for protocols would be shown on the main page. 
-![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/data%20display.png)
-![Image 3](https://github.com/Joycechocho/weather-station/blob/master/Project_4/pictures/protocol%20test.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/pictures/data%20display.png)
+![Image 3](https://github.com/Joycechocho/weather-station/blob/master/pictures/protocol%20test.png)
 
 Reference Sources
 * [Chart js: Open source HTML5 Charts for your website][rs1]
